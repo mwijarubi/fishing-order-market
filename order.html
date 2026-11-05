@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f6f7f2">
+    <meta name="description" content="Choose your fresh catch and arrange delivery with Lake & Coast.">
+    <title>Place an Order — Lake &amp; Coast</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html" aria-label="Lake and Coast home">
+            <span class="brand-mark" aria-hidden="true">L<span>&amp;</span></span>
+            <span>lake<span class="brand-light"> &amp; coast</span></span>
+        </a>
+        <nav class="site-nav" aria-label="Main navigation">
+            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="index.html#fish">Our fish</a>
+            <a class="nav-link" href="index.html#about">Our promise</a>
+            <a class="nav-cta" href="order.html" aria-current="page">Your order <span aria-hidden="true">↗</span></a>
+        </nav>
+    </header>
+
+    <main class="order-page">
+        <div class="order-intro">
+            <a class="back-link" href="index.html#fish"><span aria-hidden="true">←</span> Back to the catch</a>
+            <span class="eyebrow"><span class="status-dot"></span> FRESHNESS IS JUST A FEW CLICKS AWAY</span>
+            <h1>Make it a <span>fish night.</span></h1>
+            <p>Tell us what you’re after and we’ll help get something lovely to your door.</p>
+        </div>
+
+        <div class="order-layout">
+            <form class="order-form" id="orderForm">
+                <div class="form-heading">
+                    <span class="step-number">01</span>
+                    <div><h2>Your details</h2><p>So we know where to bring the good stuff.</p></div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-field">
+                        <label for="name">Your name</label>
+                        <input type="text" id="name" name="name" autocomplete="name" placeholder="e.g. Amina Juma" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="phone">Phone number</label>
+                        <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="+255 7xx xxx xxx" required>
+                    </div>
+                    <fieldset class="fish-field field-full" aria-describedby="fish-hint">
+                        <legend>Choose your fresh catch <span>(pick one or more)</span></legend>
+                        <p id="fish-hint" class="fish-hint">Select what you’d like and set a quantity for each.</p>
+                        <div class="fish-options">
+                            <div class="fish-option">
+                                <input class="fish-checkbox" id="fish-tilapia" type="checkbox" name="fish" value="Tilapia" data-price="10000">
+                                <label class="fish-option-copy" for="fish-tilapia"><strong>Tilapia</strong><small>TSh 10,000 / kg</small></label>
+                                <span class="fish-quantity"><span>KG</span><input class="fish-quantity-input" type="number" name="quantity-Tilapia" min="1" step="1" value="1" inputmode="numeric" aria-label="Tilapia quantity in kilograms" required disabled></span>
+                            </div>
+                            <div class="fish-option">
+                                <input class="fish-checkbox" id="fish-nile-perch" type="checkbox" name="fish" value="Nile Perch" data-price="15000">
+                                <label class="fish-option-copy" for="fish-nile-perch"><strong>Nile Perch</strong><small>TSh 15,000 / kg</small></label>
+                                <span class="fish-quantity"><span>KG</span><input class="fish-quantity-input" type="number" name="quantity-Nile Perch" min="1" step="1" value="1" inputmode="numeric" aria-label="Nile Perch quantity in kilograms" required disabled></span>
+                            </div>
+                            <div class="fish-option">
+                                <input class="fish-checkbox" id="fish-sardine" type="checkbox" name="fish" value="Sardine" data-price="5000">
+                                <label class="fish-option-copy" for="fish-sardine"><strong>Sardines</strong><small>TSh 5,000 / kg</small></label>
+                                <span class="fish-quantity"><span>KG</span><input class="fish-quantity-input" type="number" name="quantity-Sardine" min="1" step="1" value="1" inputmode="numeric" aria-label="Sardines quantity in kilograms" required disabled></span>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <div class="form-field field-full">
+                        <label for="location">Delivery location</label>
+                        <input type="text" id="location" name="location" autocomplete="street-address" placeholder="Street, neighbourhood, or a nearby landmark" required>
+                    </div>
+                    <div class="form-field field-full">
+                        <label for="message">A note for us <span class="label-hint">(optional)</span></label>
+                        <textarea id="message" name="message" rows="3" placeholder="Anything else we should know?"></textarea>
+                    </div>
+                </div>
+
+                <div class="order-total">
+                    <span><span class="total-label">YOUR ESTIMATED TOTAL</span><small id="orderSummary">Choose one or more fish</small></span>
+                    <strong>TSh <span id="total" aria-live="polite">0</span></strong>
+                </div>
+                <button class="button button-primary submit-button" type="submit">Send order via WhatsApp <span aria-hidden="true">↗</span></button>
+                <p class="form-privacy"><span aria-hidden="true">♡</span> WhatsApp opens with your order ready. Tap Send to confirm.</p>
+                <p class="confirmation" id="confirmation" role="status" aria-live="polite"></p>
+            </form>
+
+            <aside class="order-aside">
+                <div class="aside-image">
+                    <img src="https://images.unsplash.com/photo-1510130387422-82bed34b37e9?auto=format&amp;fit=crop&amp;w=800&amp;q=85" alt="Fresh fish, prepared with care">
+                    <span class="aside-image-label"><span class="status-dot"></span> FRESH, EVERY DAY</span>
+                </div>
+                <div class="aside-copy">
+                    <span class="eyebrow">A PROMISE FROM US</span>
+                    <h2>Freshness, with a little extra care.</h2>
+                    <p>We work with trusted local fishers to bring you a better kind of catch. Your order goes straight to our team on WhatsApp.</p>
+                    <div class="aside-detail"><span aria-hidden="true">✳</span> Sourced locally, handled with care</div>
+                    <div class="aside-detail"><span aria-hidden="true">↗</span> Easy order updates on WhatsApp</div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <a class="brand footer-brand" href="index.html"><span class="brand-mark" aria-hidden="true">L<span>&amp;</span></span><span>lake<span class="brand-light"> &amp; coast</span></span></a>
+        <p>Fresh from the water. Made for your table.</p>
+        <a href="index.html#fish">Back to today’s catch <span aria-hidden="true">↗</span></a>
+        <small>© 2026 Lake &amp; Coast. Freshness with care.</small>
+    </footer>
+    <script src="script.js" defer></script>
+</body>
+</html>
